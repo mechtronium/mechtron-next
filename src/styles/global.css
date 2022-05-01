@@ -3,14 +3,14 @@
 
 html{
   height: 100%;
-  background-color: black;
+  background: linear-gradient(to right, #dddddd 0%, #eeeeee 15%, #ffffff 50%, #eeeeee 85%,#dddddd 100%);
 }
 
 body{
-  background: linear-gradient(to right, #dddddd 0%, #eeeeee 15%, #ffffff 50%, #eeeeee 85%,#dddddd 100%);
   height: 100%;
   margin: 0;
-  font-family: "Gemunu Libre", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: small;
   font-weight: 300;
 }
 

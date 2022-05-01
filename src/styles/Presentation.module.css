@@ -7,7 +7,7 @@
 }
 
 #header > span > h1{
-  color: #cccccc;
+  color: #ffffff;
   font-family: 'Stalinist One', cursive;
   margin-top: 0;
   margin-bottom: 0;
@@ -31,30 +31,61 @@
 }
 
 #main > h1 {
-  color: #990000;
+  color: #000000;
   margin-left: auto;
   margin-right: auto;
   font-size: 64px;
   text-align: center;
+  font-family: "Gemunu Libre", sans-serif;
 }
 
 #main > section > h2 {
-  color: #000099;
+  color: #009900;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   font-size: 48px;
+  font-family: "Gemunu Libre", sans-serif;
 }
 
-#main > section > ul > li > h3 {
-  color: #000000;
+#main > section > ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+.gripe_title {
+  color: #cc0000;
   font-size: 32px;
   margin-bottom: 0px;
+  font-family: "Gemunu Libre", sans-serif;
+}
+
+.want_title{
+  color: #0000cc;
+  font-size: 32px;
+  margin-bottom: 0px;
+  font-family: "Gemunu Libre", sans-serif;
+  text-align: right;
 }
 
 #main > section{
   color: #000000;
-  max-width: 800px;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.left_column {
+  flex: 50%;
+  margin-right: 40px;
+}
+
+.right_column {
+  flex: 50%;
+  margin-left: 40px;
 }
