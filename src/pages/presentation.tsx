@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import home from '@/styles/Home.module.css';
+import present from '@/styles/Presentation.module.css';
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -23,15 +24,15 @@ export default function Home() {
 
       </Head>
 
+      <header id={present.header}>
+        <Link href="/"><h1>MECHTRON</h1></Link>
+      </header>
 
-      <main>
-
-        <header id={home.header}>
-          <h1>MECHTRON</h1>
-          <h2><span>WebAssembly</span> on the Client, Server, IoT and the Edge</h2>
-        </header>
+      <main id={present.main}>
+        <h1>DevOps Gripes</h1>
 
       </main>
+
     </>
   );
 }
