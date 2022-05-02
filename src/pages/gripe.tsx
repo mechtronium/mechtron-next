@@ -1,12 +1,6 @@
-import React, {
-  ReactElement,
-  JSXElementConstructor,
-  ReactFragment,
-  ReactPortal,
-  FunctionComponent,
-} from 'react';
-import { LinkProps } from 'next/dist/client/link';
+import React from 'react';
 import present from '@/styles/Presentation.module.css';
+import {Detail} from "@/pages/detail";
 
 const Gripe = ({ children }) => <>{children}</>;
 
@@ -22,43 +16,29 @@ type GripeState = {
   details: boolean;
 };
 
-type DetailProps = {
-  show: boolean;
-  text: string;
-};
 
-class Detail extends React.Component<DetailProps, any> {
-  render() {
-    if (this.props.show) {
-      return <p>{this.props.text}</p>;
-    } else {
-      return <div style={{ display: `none` }} />;
-    }
-  }
-}
 
 class Gripe2 extends React.Component<GripeProps, GripeState> {
   componentDidMount() {
-    this.setState({ show: true, details: true });
+    this.setState({ show: false, details: false});
   }
+
 
   render() {
     if (this.state != null && this.state.show) {
       return (
-        <div className={present.row}>
+        <div className={present.row} id="gripe">
           <div className={present.left_column}>
             <h3 className={present.gripe_title}>{this.props.gripe_title}</h3>
             <Detail
-              text={this.props.gripe_detail}
               show={this.state.details}
-            ></Detail>
+            ><p>{this.props.gripe_detail}</p></Detail>
           </div>
           <div className={present.right_column}>
             <h3 className={present.want_title}>{this.props.want_title}</h3>
             <Detail
-              text={this.props.want_detail}
               show={this.state.details}
-            ></Detail>
+            ><p>{this.props.want_detail}</p></Detail>
           </div>
         </div>
       );
