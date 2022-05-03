@@ -8,7 +8,7 @@ import {useRouter} from "next/router";
 export default function Page() {
 
   var point_ref = Array<React.Ref<Point>>();
-  for (var i = 0; i < 7; i++) {
+  for (var i = 0; i < 9; i++) {
     point_ref[i] = React.createRef();
   }
 
@@ -30,29 +30,39 @@ export default function Page() {
     </Point>
 
     <Point ref={point_ref[2]}>
-      <h4 className="point">Point</h4>
-      <p><strong>Resource's Address</strong>: every particle has an address so it may receive and send messages.</p>
+      <h4 className="point">Star</h4>
+      <p>Provisions, Contains and Manages Particles OR References External Particles.  A Star can be hosted on a Machine with other Stars or can be hosted in a Machine by itself communicating to the rest of the cluster via one or more Lanes.</p>
     </Point>
 
     <Point ref={point_ref[3]}>
+      <h4 className="point">Lane</h4>
+      <p>A communication channel between two Stars</p>
+    </Point>
+
+    <Point ref={point_ref[4]}>
+      <h4 className="point">Point</h4>
+      <p><strong>Resource's Address</strong>: every particle has a point so it may receive and send messages.</p>
+    </Point>
+
+    <Point ref={point_ref[5]}>
       <h4 className="point">Point Segment</h4>
       <p>A point may be made up of one or more colon delimited segments giving the point system a hierarchy. Example of
         a specific User point: <em>'<strong>my-domain.com:users:scott</strong>'</em></p>
     </Point>
 
-    <Point ref={point_ref[4]}>
+    <Point ref={point_ref[6]}>
       <h4 className="point">Kind</h4>
       <p>Particles have a <em>Kind</em> denoted by enclosing in angle
         brackets: <strong>&lt;Space&gt;</strong>, <strong>&lt;User&gt;</strong> etc...</p>
     </Point>
 
-    <Point ref={point_ref[5]}>
+    <Point ref={point_ref[7]}>
       <h4 className="point">SubKind</h4>
       <p>Some Particles have a SubKind for instance: <strong>&lt;UserBase&lt;KeyCloak&gt;&gt;</strong> -- this indicates
         a UserBase that is authenticated using KeyCloak</p>
     </Point>
 
-    <Point ref={point_ref[6]}>
+    <Point ref={point_ref[8]}>
       <h4 className="point">Specific</h4>
       <p>And in order for 3rd parties to extend and create new types of Particles a Specific may further
         categories a Particles
