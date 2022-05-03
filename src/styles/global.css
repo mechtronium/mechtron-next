@@ -61,3 +61,22 @@ a{
   margin-top: 16px;
 }
 
+
+blockquote {
+  background: black;
+  color: #cccccc;
+  padding: 20px;
+  font-size: 24px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 8px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+blockquote > p {
+  font-size: 24px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

@@ -6,16 +6,14 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Point from "@/components/point";
 import {NextRouter} from "next/router";
+require("xterm/lib/xterm.js");
+require("xterm/css/xterm.css");
 
 
-type SomePageProps = {
-  points?: React.Ref<Point>[],
-  children: React.ReactNode,
-  router: NextRouter,
-  next: string
+type TermPageProps = {
 }
 
-class SomePage extends React.Component<SomePageProps, any> {
+class TermPage extends React.Component<TermPageProps, any> {
   render() {
     return (
       <>
@@ -52,58 +50,22 @@ class SomePage extends React.Component<SomePageProps, any> {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
-          <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
 
         </Head>
-        <div id={present.page}>
-          <div id={present.content}>
 
-            <main id={present.main}>
-              {this.props.children}
-            </main>
-          </div>
-
-          <footer id={present.footer}>
-            <Button className={present.next_button} variant="contained"><a
-              onClick={(e) => this.next()}>Next</a></Button>
-          </footer>
-        </div>
+        <div id='terminal'/>
+        <script>
+          var term = new Terminal();
+          term.open(document.getElementById("terminal"));
+          term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ')
+        </script>
       </>
     );
   }
 
   next() {
-    var change = false;
-    if (this.props.points != null) {
-      for (var i = 0; i < this.props.points.length; i++) {
-console.log("index: "+i);
-        var point: React.Ref<Point> = this.props.points[i];
-        if (point != null && point.current != null) {
-          console.log("point != null");
-          if (point.current.state.show == true && point.current.state.done == false ) {
-            change = point.current.nextDetailHasMore();
-            if( change )
-            {
-              return;
-            } else {
-
-            }
-          } else if (point.current.state.show == false ){
-
-console.log("go");
-            point.current.setState({show: true} );
-            return;
-          }
-        }
-      }
-    } else {
-      console.log("Points == null");
-    }
-    if (!change) {
-      console.log("NEXT PAGE!");
-      this.props.router.push(this.props.next)
-    }
+  //    this.props.router.push(this.props.next)
   }
 }
 
-export default SomePage;
+export default TermPage;
