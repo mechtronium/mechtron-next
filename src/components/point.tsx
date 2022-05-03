@@ -8,7 +8,8 @@ type PointProps = {
 
 type PointState = {
   show: boolean;
-  details: boolean;
+  done: boolean;
+  index: number;
 };
 
 
@@ -16,25 +17,33 @@ export class Point extends React.Component<PointProps, PointState> {
 
   constructor(props: PointProps) {
     super(props);
-    this.state = {show: false, details: false};
+    this.state = {show: false, done: false, index: 0};
   }
 
 
   componentDidMount() {
-    this.setState({show: false, details: false});
+    this.setState({show: false, done: false});
   }
 
-  componentDidUpdate(prevProps: Readonly<PointProps>, prevState: Readonly<PointState>, snapshot?: any) {
+  nextDetailHasMore() {
     if (this.props != null && this.props.details != null) {
-      for (var i = 0; i < this.props.details.length; i++) {
-        var c = this.props.details[i];
-        if( c.current != null ) {
-          c.current.setState({show: this.state.details})
-        }
+      var index = this.state.index;
+      for( var i=index-1; i>=0; i--) {
+        this.props.details[i].current.setState( {show:false} );
+      }
+      if( index < this.props.details.length ) {
+        this.props.details[index].current.setState( {show:true} );
+        this.setState( {index: index+1} );
+        return true;
       }
     }
+    this.makeDone();
+    return false;
   }
 
+  makeDone() {
+    this.setState( {done:true})
+  }
 
   render() {
     if (this.state.show) {

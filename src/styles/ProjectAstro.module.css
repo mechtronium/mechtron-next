@@ -1,0 +1,29 @@
+
+
+
+
+
+.row {
+  layout: flex
+}
+
+.row> .column{
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+
+.sub_project {
+  color: #2196f3;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 48px;
+  text-align: center;
+  font-family: "Gemunu Libre", sans-serif;
+}

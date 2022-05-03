@@ -8,6 +8,10 @@ import {useRouter} from "next/router";
 
 
 export default function Gripes1() {
-  var content = (<><h1>DevOps Gripes</h1></>);
-  return <SomePage next="/gripes1" router={useRouter()}>{content}</SomePage>
+
+  var content = (<><h1>DevOps Gripes</h1>
+    <section>
+      <h2>2) More ...</h2>
+    </section></>);
+  return <SomePage next="/project_astro" router={useRouter()}>{content}</SomePage>
 }

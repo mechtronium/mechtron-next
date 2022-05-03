@@ -29,4 +29,11 @@ a{
   font-weight: 700;
 }
 
+.point {
+  color: #1976d2;
+  font-size: 48px;
+  font-family: "Gemunu Libre", sans-serif;
+  margin-bottom: 0px;
+  margin-top: 16px;
+}
 

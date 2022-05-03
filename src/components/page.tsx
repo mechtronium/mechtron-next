@@ -5,11 +5,14 @@ import Link from 'next/link';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Point from "@/components/point";
+import {NextRouter} from "next/router";
 
 
 type SomePageProps = {
-  points: React.Ref<Point>[],
-  children: React.ReactNode
+  points?: React.Ref<Point>[],
+  children: React.ReactNode,
+  router: NextRouter,
+  next: string
 }
 
 class SomePage extends React.Component<SomePageProps, any> {
@@ -53,13 +56,6 @@ class SomePage extends React.Component<SomePageProps, any> {
         </Head>
         <div id={present.page}>
           <div id={present.content}>
-            <header id={present.header}>
-        <span>
-          <Link href="/">
-            <h1>MECHTRON</h1>
-          </Link>
-        </span>
-            </header>
 
             <main id={present.main}>
               {this.props.children}
@@ -77,23 +73,34 @@ class SomePage extends React.Component<SomePageProps, any> {
 
   next() {
     var change = false;
-    for (var i = 0; i < this.props.points.length; i++) {
-      var point: React.Ref<Point> = this.props.points[i];
-      if (point != null) {
-        console.log("point != null");
-        if (point.current.state.show == true && point.current.state.details == true) {
-          point.current.setState({show: true, details: false});
-          change = true;
-        } else if (point.current.state.show == false) {
+    if (this.props.points != null) {
+      for (var i = 0; i < this.props.points.length; i++) {
+console.log("index: "+i);
+        var point: React.Ref<Point> = this.props.points[i];
+        if (point != null) {
+          console.log("point != null");
+          if (point.current.state.show == true && point.current.state.done == false ) {
+            change = point.current.nextDetailHasMore();
+            if( change )
+            {
+              return;
+            } else {
 
-          console.log("go");
-          point.current.setState({show: true, details: true});
-          return;
+            }
+          } else if (point.current.state.show == false ){
+
+console.log("go");
+            point.current.setState({show: true} );
+            return;
+          }
         }
       }
+    } else {
+      console.log("Points == null");
     }
     if (!change) {
       console.log("NEXT PAGE!");
+      this.props.router.push(this.props.next)
     }
   }
 }

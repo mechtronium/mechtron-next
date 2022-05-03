@@ -34,7 +34,26 @@
   color: #000000;
   margin-left: auto;
   margin-right: auto;
-  font-size: 64px;
+  font-size: 84px;
+  text-align: center;
+  font-family: "Gemunu Libre", sans-serif;
+}
+
+#main > h2 {
+  color: #000000;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 48px;
+  text-align: center;
+  font-family: "Gemunu Libre", sans-serif;
+}
+
+
+#main > h3 {
+  color: #666666;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 32px;
   text-align: center;
   font-family: "Gemunu Libre", sans-serif;
 }
