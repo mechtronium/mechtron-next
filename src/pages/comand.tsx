@@ -8,9 +8,14 @@ import {useRouter} from "next/router";
 
 
 export default function Page() {
+  var point_ref = Array<React.Ref<Point>>();
+  for (var i = 0; i < 10; i++) {
+    point_ref[i] = React.createRef();
+  }
 
   var content = (<><h1>STARLANE COMMANDS</h1>
 
+    <Point ref={point_ref[0]}>
     <h4 className="point">CREATE</h4>
     <blockquote>
       <p>create my-domain.com&lt;Space&gt;</p>
@@ -20,12 +25,8 @@ export default function Page() {
       <p>create ^[ my-local-file.txt ]-&gt; my-domain.com:my-files:/my-file.txt</p>
       <p>create ^[ my-other-local-file.txt ]-&gt; my-domain.com:my-files:/my-dir/my-other-file.txt</p>
     </blockquote>
+    </Point>
 
-
-    <h4 className="point">GET</h4>
-    <blockquote>
-      <p>get my-domain.com:my-files:/my-dir/my-other-file.txt</p>
-    </blockquote>
 
 
     <h4 className="point">SELECT</h4>
@@ -34,6 +35,15 @@ export default function Page() {
       <p>select my-domain.com:**</p>
       <p>select my-domain.com:**&lt;File&gt;</p>
     </blockquote>
+
+
+    <Point>
+      <h4 className="point">GET</h4>
+      <blockquote>
+        <p>get my-domain.com:my-files:/my-dir/my-other-file.txt</p>
+      </blockquote>
+    </Point>
+
 
     <h4 className="point">PUBLISH</h4>
     <blockquote>

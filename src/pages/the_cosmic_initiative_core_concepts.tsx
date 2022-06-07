@@ -8,7 +8,7 @@ import {useRouter} from "next/router";
 export default function Page() {
 
   var point_ref = Array<React.Ref<Point>>();
-  for (var i = 0; i < 9; i++) {
+  for (var i = 0; i < 10; i++) {
     point_ref[i] = React.createRef();
   }
 

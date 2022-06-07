@@ -73,6 +73,7 @@ blockquote {
   margin-right: 0px;
   margin-top: 8px;
   font-family: 'Share Tech Mono', monospace;
+  min-height: 128px;
 }
 
 blockquote > p {
@@ -80,3 +81,54 @@ blockquote > p {
   margin-top: 16px;
   margin-bottom: 16px;
 }
+
+.command {
+  color: tomato
+}
+
+.pnt_segment {
+  color: goldenrod;
+}
+
+.kind {
+  color: lightgreen;
+}
+
+.sub_kind {
+  color: lightseagreen;
+}
+
+.props > .mod{
+  color: tomato
+}
+
+.props >.key {
+  color: green
+}
+
+.props > .val {
+  color: saddlebrown;
+}
+
+.err {
+  color: darkred
+}
+
+.cool{
+}
+
+.cool{
+  color: tomato;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  margin-bottom: 0px;
+  font-size: 48px;
+  text-align: center;
+  font-family: "Gemunu Libre", sans-serif;
+}
+
+
+
+
+

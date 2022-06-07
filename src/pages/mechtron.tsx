@@ -11,17 +11,28 @@ export default function Page() {
 
   var content = (<><h1>MECHTRON</h1>
 
+    <h4 className="point">uhmmmm...    <em>MECH....TRON?</em></h4>
+    <ul>
+      <li>Cosmic Mesh enabled WebAssembly
+      <p>[ Cosmic Portal API + WebAssembly on Rust = Mechtron ]</p>
+      </li>
+
+    </ul>
+
     <h4 className="point">THE CODE</h4>
     <blockquote>
 
-      pub struct MyApp();<br/>
+      #[derive(Mechtron)
+      pub struct MyMechtron();<br/>
       <br/>
 
-      impl Mechtron for MyApp &#123;<br/>
+      #[routes]
+      impl MyMechtron&nbsp;&#123;<br/>
       <br/>
-      &nbsp;&nbsp;fn handle_http_request(&self, ctx: &dyn MechtronCtx, request: HttpRequest ) -&gt; Result&lt;ResponseCore,Error&gt; &#123;<br/>
+      &nbsp;&nbsp;#[route(Http&lt;Get&gt;/index.html)]
+      &nbsp;&nbsp;fn hello_world(&self, ctx: InputCtx&lt;HttpRequest&gt; ) -&gt; Result&lt;&'static str,MsgErr&gt; &#123;<br/>
       <br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&quot;Hello!&quot;.into()<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&quot;Hello World!&quot;<br/>
       <br/>
 
       &#125;
