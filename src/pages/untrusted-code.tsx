@@ -34,5 +34,5 @@ export default function Page() {
     <p>Now Uberscott's profile will auto generate a fractal every time his profile background is requested!</p>
 
   </>);
-  return <SomePage next="/enterprise" router={useRouter()}>{content}</SomePage>
+  return <SomePage next="http://starlane.io" router={useRouter()}>{content}</SomePage>
 }
