@@ -103,5 +103,5 @@ export default function Page() {
       </ul>
     </Point>
   </>);
-  return <SomePage points={point_ref} next="/create" router={useRouter()}>{content}</SomePage>
+  return <SomePage points={point_ref} next="/cosmic-basics" router={useRouter()}>{content}</SomePage>
 }

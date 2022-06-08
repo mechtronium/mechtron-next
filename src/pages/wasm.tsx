@@ -33,5 +33,5 @@ export default function Page() {
       <Point ref={point_ref[9]}><li>No Standard deployment yet (other than JavaScript)</li></Point>
     </ul>
   </>);
-  return <SomePage points={point_ref} next="/starlane" router={useRouter()}>{content}</SomePage>
+  return <SomePage points={point_ref} next="/the_cosmic_initiative" router={useRouter()}>{content}</SomePage>
 }

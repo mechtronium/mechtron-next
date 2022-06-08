@@ -10,7 +10,7 @@ export default function Page() {
 
 
   var point_ref = Array<React.Ref<Point>>();
-  for (var i = 0; i < 31; i++) {
+  for (var i = 0; i < 33; i++) {
     point_ref[i] = React.createRef();
   }
 
@@ -42,30 +42,32 @@ export default function Page() {
       <Point ref={point_ref[1]}>
         <div className={project.column}>
           <h3 className={project.sub_project}>Portal</h3>
+          <Point ref={point_ref[15]}><h6><em>[ DEFINES ]</em></h6></Point>
           <ul>
-            <Point ref={point_ref[15]}><li><h6>Cosmic Mesh API</h6></li></Point>
-            <Point ref={point_ref[16]}><li><h6>Wave Passing Def <em>[messaging]</em></h6></li></Point>
-            <Point ref={point_ref[17]}><li><h6>Serde Def</h6></li></Point>
-            <Point ref={point_ref[18]}><li><h6>Config DSL</h6></li></Point>
-            <Point ref={point_ref[19]}><li><h6>Command Line Interface DSL</h6></li></Point>
-            <Point ref={point_ref[20]}><li><h6>Rust Portal API</h6></li></Point>
-            <Point ref={point_ref[21]}><li><h6>Rust DSL Parser</h6></li></Point>
-            <Point ref={point_ref[22]}><li><h6>Rust Portal Framework Implementation</h6></li></Point>
-            <Point ref={point_ref[23]}><li><h6>Generated Client APIs for other Languages</h6></li></Point>
+            <Point ref={point_ref[16]}><li><h6>Cosmic Mesh API</h6></li></Point>
+            <Point ref={point_ref[17]}><li><h6>Wave Passing Def <em>[messaging]</em></h6></li></Point>
+            <Point ref={point_ref[18]}><li><h6>Serde Def</h6></li></Point>
+            <Point ref={point_ref[19]}><li><h6>Config DSL</h6></li></Point>
+            <Point ref={point_ref[20]}><li><h6>Command Line Interface DSL</h6></li></Point>
+            <Point ref={point_ref[21]}><li><h6>Rust Portal API</h6></li></Point>
+            <Point ref={point_ref[22]}><li><h6>Rust DSL Parser</h6></li></Point>
+            <Point ref={point_ref[23]}><li><h6>Rust Portal Framework Implementation</h6></li></Point>
+            <Point ref={point_ref[24]}><li><h6>Generated Client APIs for other Languages</h6></li></Point>
           </ul>
         </div>
       </Point>
       <Point ref={point_ref[2]}>
         <div className={project.column}>
           <h3 className={project.sub_project}>Mechtron</h3>
+          <Point ref={point_ref[25]}><h6><em>[ EXTENDS ]</em></h6></Point>
           <ul>
-            <Point ref={point_ref[24]}><li><h6>WebAssembly + Cosmic Portal API</h6></li></Point>
-            <Point ref={point_ref[25]}><li><h6>Send Waves <em>[messages]</em> to other Mesh Particles</h6></li></Point>
-            <Point ref={point_ref[26]}><li><h6>Execute Cosmic Mesh Commands</h6></li></Point>
-            <Point ref={point_ref[27]}><li><h6>Message other Mesh Particles</h6></li></Point>
-            <Point ref={point_ref[28]}><li><h6>Configurable</h6></li></Point>
-            <Point ref={point_ref[29]}><li><h6>Deployable</h6></li></Point>
-            <Point ref={point_ref[30]}><li><h6>Wasm Host & Guest Frameworks</h6></li></Point>
+            <Point ref={point_ref[26]}><li><h6>WebAssembly + Cosmic Portal API</h6></li></Point>
+            <Point ref={point_ref[27]}><li><h6>Send Waves <em>[messages]</em> to other Mesh Particles</h6></li></Point>
+            <Point ref={point_ref[28]}><li><h6>Execute Cosmic Mesh Commands</h6></li></Point>
+            <Point ref={point_ref[29]}><li><h6>Message other Mesh Particles</h6></li></Point>
+            <Point ref={point_ref[30]}><li><h6>Configurable</h6></li></Point>
+            <Point ref={point_ref[31]}><li><h6>Deployable</h6></li></Point>
+            <Point ref={point_ref[32]}><li><h6>Wasm Host & Guest Frameworks</h6></li></Point>
           </ul>
         </div>
       </Point>
