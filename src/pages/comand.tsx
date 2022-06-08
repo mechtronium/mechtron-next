@@ -13,7 +13,7 @@ export default function Page() {
     point_ref[i] = React.createRef();
   }
 
-  var content = (<><h1>STARLANE COMMANDS</h1>
+  var content = (<><h1>COMMANDS</h1>
 
     <Point ref={point_ref[0]}>
     <h4 className="point">CREATE</h4>

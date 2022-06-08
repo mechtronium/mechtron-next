@@ -13,7 +13,8 @@ export default function Page() {
     point_ref[i] = React.createRef();
   }
 
-  var content = (<><h1>COMMANDS</h1>
+  var content = (<><h1>COSMIC BASICS</h1>
+    <h2>Particles, Points & Selectors</h2>
 
 
     <Point ref={point_ref[0]}>
@@ -27,5 +28,6 @@ export default function Page() {
 
 
   </>);
-  return <SomePage points={point_ref} next="/bind-basics" router={useRouter()}>{content}</SomePage>
+  return <SomePage points={point_ref} next="/cosmic-basics3" router={useRouter()}>{content}</SomePage>
+
 }
